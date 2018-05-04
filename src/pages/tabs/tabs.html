@@ -1,0 +1,16 @@
+<ion-fab top right #fab style="right: 20px;">
+    <button ion-fab class="steelgrayButton">
+        <img src="{{user.photoURL}}">
+    </button>
+    <ion-fab-list style="right: 0px; align-items: flex-end;">
+        <button ion-button round icon-start class="steelgrayButton" (click)="goToAccount(fab)"><ion-icon name="person"></ion-icon>Mon compte</button>
+        <button ion-button round icon-start class="steelgrayButton" (click)="goToAccount(fab)"><ion-icon name="information-circle"></ion-icon>A propos</button>
+        <button ion-button round icon-start class="steelgrayButton" (click)="logout(fab)"><ion-icon name="log-out"></ion-icon>Se déconnecter</button>
+    </ion-fab-list>
+</ion-fab>
+
+<ion-tabs (ionChange)="changeTitle($event)">
+    <ion-tab tabIcon="calendar" tabTitle="Accueil" [root]="tab1Root"></ion-tab>
+    <ion-tab tabIcon="contact" tabTitle="Mes athlètes" [root]="tab2Root"></ion-tab>
+    <ion-tab tabIcon="contact" tabTitle="Mes coachs" [root]="tab3Root"></ion-tab>
+</ion-tabs>

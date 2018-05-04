@@ -1,0 +1,114 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title style="max-width: 980px; margin: auto;">Calendrier</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list class="headerTable">
+        <ion-list-header class="largeMonth">
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button ion-button icon-only clear round class="prevNextButton" (click)="popMonth()">
+                    <ion-icon name="arrow-back"></ion-icon>                        
+                </button>
+                <h2>
+                    {{monthsName[month].full}} - {{year}}
+                </h2>
+                <button ion-button icon-only clear round class="prevNextButton" (click)="addMonth()">
+                    <ion-icon name="arrow-forward"></ion-icon>
+                </button>
+            </div>
+        </ion-list-header>
+        <ion-list-header class="tinyWeek">
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button ion-button icon-only clear round class="prevNextButton" (click)="popWeek()">
+                    <ion-icon name="arrow-back"></ion-icon>                        
+                </button>
+                <h2>
+                    Du {{weekDays[0].date | date:'dd/MM/yy'}} au {{weekDays[6].date | date:'dd/MM/yy'}}
+                </h2>
+                <button ion-button icon-only clear round class="prevNextButton" (click)="addWeek()">
+                    <ion-icon name="arrow-forward"></ion-icon>
+                </button>
+            </div>
+        </ion-list-header>
+    </ion-list>
+    <ion-card class="tinyWeek">
+        <ion-list>
+            <ion-item *ngFor="let day of weekDays; let i = index" (click)="goToActivities(day.date)">
+        
+                <p class="dayBackground" style="position: absolute; width: 170px; font-size: 4.2rem;">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-6>{{daysName[i].min}}</ion-col>
+                            <ion-col col-6>{{day.day}}</ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </p>
+                <div class="dayData">
+                    <ion-badge title="Durée totale" class="standard">
+                        {{day.time}}&nbsp;<ion-icon name="stopwatch"></ion-icon><!--stopwatch-->
+                    </ion-badge>
+                    <ion-badge title="Distance totale" class="dist standard">
+                        {{day.dist}}&nbsp;km<!--ion-icon name="map"></ion-icon><!--stopwatch-->
+                    </ion-badge>
+                    <ion-badge title="Ressenti moyen" class="standard" [ngClass]="day.feeling < 4 ? 'badFeeling' : (day.feeling <7 ? 'mediumFeeling' : 'goodFeeling')">
+                        {{day.feeling}}&nbsp;
+                        <ion-icon name="thumbs-down" *ngIf="day.feeling < 5"></ion-icon>
+                        <ion-icon name="thumbs-up" *ngIf="day.feeling >= 5"></ion-icon>
+                    </ion-badge>
+                    <div title="Liste des activités" class="standardIcon">
+                        <ion-icon name="water"></ion-icon> 
+                        <ion-icon name="bicycle"></ion-icon> 
+                        <ion-icon name="walk"></ion-icon> 
+                        <ion-icon name="body"></ion-icon>
+                    </div>
+                </div>
+
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <table class="largeMonth">
+        <thead>
+            <tr>
+                <th *ngFor="let day of daysName">
+                    <ion-card style="height: auto;">
+                        {{day.full}}
+                    </ion-card>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let week of monthDays">
+                <td *ngFor="let day of week">
+                    <ion-card [ngClass]="day.month? 'dayCard' : 'dayCard otherMonth'" (click)="goToActivities(day.date)">
+                        <p class="dayBackground" style="position: absolute;">{{day.day}}</p>
+                        <div class="dayData">
+                            <div><ion-badge title="Durée totale" class="standard">
+                                {{day.time}}&nbsp;<ion-icon name="time"></ion-icon><!--stopwatch-->
+                            </ion-badge></div>
+                            <div><ion-badge title="Distance totale" class="dist standard">
+                                {{day.dist}}&nbsp;km<!--ion-icon name="map"></ion-icon><!--stopwatch-->
+                            </ion-badge></div>
+                            <div><ion-badge title="Ressenti moyen" class="standard" [ngClass]="day.feeling < 4 ? 'badFeeling' : (day.feeling <7 ? 'mediumFeeling' : 'goodFeeling')">
+                                {{day.feeling}}&nbsp;
+                                <ion-icon name="thumbs-down" *ngIf="day.feeling < 5"></ion-icon>
+                                <ion-icon name="thumbs-up" *ngIf="day.feeling >= 5"></ion-icon>
+                            </ion-badge></div>
+                            <div title="Liste des activités" class="standardIcon">
+                                <ion-icon name="water"></ion-icon> 
+                                <ion-icon name="bicycle"></ion-icon> 
+                                <ion-icon name="walk"></ion-icon> 
+                                <ion-icon name="body"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-card>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button ion-button round (click)="openSelectCalendar();">test</button>
+
+</ion-content>

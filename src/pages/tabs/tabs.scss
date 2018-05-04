@@ -1,0 +1,136 @@
+page-tabs{
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: #474747;
+        background-color: #cccccc;
+    }
+
+    .tabs-md .tab-button[aria-selected=true] {
+        color: #474747;
+        background-color: #cccccc;
+    }
+
+    .tabs-md .tab-button[aria-selected=false] .tab-button-icon {
+        color: color($colors, fontcolor);
+    }
+
+    .tabs-md .tab-button[aria-selected=false] {
+        color: color($colors, fontcolor);
+    }
+
+    .tabs-md .tabbar {
+        background: color($colors, headercolor);
+      }
+
+    .content-md{
+        color: color($colors, fontcolor);
+        background: color($colors, backgroundcolor);
+    }
+
+    .toolbar-background-md{
+        color: color($colors, fontcolor);
+        background: color($colors, headercolor);
+    }
+
+    .toolbar-title-md{
+        color: color($colors, fontcolor);
+    }
+
+
+
+
+    .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+        color: #474747;
+        background-color: #cccccc;
+    }
+
+    .tabs-ios .tab-button[aria-selected=true] {
+        color: #474747;
+        background-color: #cccccc;
+    }
+
+    .tabs-ios .tab-button[aria-selected=false] .tab-button-icon {
+        color: color($colors, fontcolor);
+    }
+
+    .tabs-ios .tab-button[aria-selected=false] {
+        color: color($colors, fontcolor);
+    }
+
+    .tabs-ios .tabbar {
+        background: color($colors, headercolor);
+      }
+
+    .content-ios{
+        color: color($colors, fontcolor);
+        background: color($colors, backgroundcolor);
+    }
+
+    .toolbar-background-ios{
+        color: color($colors, fontcolor);
+        background: color($colors, headercolor);
+    }
+
+    .toolbar-title-ios{
+        color: color($colors, fontcolor);
+    }
+
+
+
+    img{
+        border-radius: 50%;
+        overflow: hidden;
+        width: auto;
+        height: auto;
+    }
+    .fab-md{
+        padding: 0;
+    }
+    .fab-ios{
+        padding: 0;
+    }
+
+    .steelgrayButton{
+        color: #fff;
+        background-color: #395567;
+    }
+
+    .toolbar .toolbar-md{
+        width: 980px;
+        margin: auto;
+    }
+
+    .toolbar .toolbar-ios{
+        width: 980px;
+        margin: auto;
+    }
+
+    .md .modal-wrapper{
+        opacity: 1;
+        transform: translateY(0px);
+        width: 210px;
+        height: 260px;
+        position: absolute;
+        left: calc(50% - (210px/2));
+        top: calc(50% - (500px/2));
+    }
+
+    @media only screen and (min-width: 768px) and (min-height: 600px) {
+        .modal-wrapper {
+            width: 210px;
+            height: 260px;
+            position: absolute;
+            left: calc(50% - (210px/2));
+            top: calc(50% - (500px/2));
+        }
+    }
+    
+    @media only screen and (min-width: 768px) and (min-height: 768px) {
+        .modal-wrapper {
+            width: 210px;
+            height: 260px;
+            position: absolute;
+            left: calc(50% - (210px/2));
+            top: calc(50% - (500px/2));
+        }
+    }
+}

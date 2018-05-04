@@ -1,0 +1,213 @@
+page-dashboard {
+    table{
+        width: 980px;
+        margin: 15px auto;
+    }
+
+    .dayCard{
+        height: 100px;
+    }    
+    
+    .toolbar-title-md{
+        text-align: center;
+    }
+
+    .md .modal-wrapper{
+        opacity: 1;
+        transform: translateY(0px);
+        width: 210px;
+        height: 260px;
+        position: absolute;
+        left: calc(50% - (210px/2));
+        top: calc(50% - (500px/2));
+    }
+
+    @media only screen and (min-width: 768px) and (min-height: 600px) {
+        .modal-wrapper {
+            width: 210px;
+            height: 260px;
+            position: absolute;
+            left: calc(50% - (210px/2));
+            top: calc(50% - (500px/2));
+        }
+    }
+    
+    @media only screen and (min-width: 768px) and (min-height: 768px) {
+        .modal-wrapper {
+            width: 210px;
+            height: 260px;
+            position: absolute;
+            left: calc(50% - (210px/2));
+            top: calc(50% - (500px/2));
+        }
+    }
+
+    .card-md{
+        width: auto;
+        margin: 2px;
+        padding: 3px;
+        color: #464646;
+    }
+
+    .card-ios{
+        width: auto;
+        margin: 2px;
+        padding: 3px;
+        color: #464646;
+    }
+
+    .otherMonth{
+        filter: brightness(80%);
+    }
+
+    .dayBackground{
+        margin: 0 0 2px;
+        font-size: 5rem;
+        font-weight: 300;
+        line-height: 1;
+        color: rgba(57, 85, 103, 0.20);
+        z-index: 0;
+    }
+
+    .prevNextButton{
+        color: #464646;
+    }
+
+    .label-md{
+        margin: 0;
+    }
+
+    .label-ios{
+        margin: 0;
+    }
+
+    .card-ios .item-ios.item-block .item-inner {
+        border-bottom: 0.55px solid #c8c7cc;
+        padding: 6px 1px;
+    }
+
+    .card-md .item-md.item-block .item-inner {
+        border-bottom: 0.55px solid #c8c7cc;
+        padding: 6px 1px;
+    }
+
+
+
+    .dayData{
+        text-align: right;
+    }
+
+    .standard{
+        background-color: #395567;
+        margin-top: 3px;
+        font-size: 12px;
+        font-weight: 900;
+        padding: 3px 6px;
+    }
+
+    .standardIcon{
+        color: #395567;
+        margin-top: 3px;
+        font-size: 16px;
+        font-weight: 900;
+        padding: 3px 6px;
+    }
+
+    .badFeeling{
+        background-color: #9c2131;
+    }
+
+    .mediumFeeling{
+        background-color: #b18528;
+    }
+
+    .goodFeeling{
+        background-color: #37884b;
+    }
+
+    .dist{
+        background-color: #5f9ea0;
+    }
+
+/*========================================*/
+/*=============RESPONSIVE CSS=============*/
+/*========================================*/
+    @media all and (max-width: 768px){
+        .largeMonth{
+            display: none;
+        }
+
+        .headerTable{
+            width: 100%;
+            margin: 15px auto;
+            background-color: white;
+        }
+        
+    }
+    @media all and (min-width: 768px) and (max-width: 992px){
+        .largeMonth{
+            display: none;
+        }
+
+        .headerTable{
+            width: 100%;
+            margin: 15px auto;
+            background-color: white;
+        }
+        
+    }
+
+    @media all and (min-width: 992px) and (max-width: 1200px){
+        .tinyWeek{
+            display: none;
+        }
+
+        .headerTable{
+            width: 980px;
+            margin: 15px auto;
+            background-color: white;
+        }
+
+        h2{
+            color: #464646;
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+    @media all and (min-width: 1200px) and (max-width: 1800px){
+        .tinyWeek{
+            display: none;
+        }
+
+        .headerTable{
+            width: 980px;
+            margin: 15px auto;
+            background-color: white;
+        }
+
+        h2{
+            color: #464646;
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+    @media all and (min-width: 1800px){
+        .tinyWeek{
+            display: none;
+        }
+
+        .headerTable{
+            width: 980px;
+            margin: 15px auto;
+            background-color: white;
+        }
+    
+        h2{
+            color: #464646;
+            width: 50%;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar hideBackButton="false" swipeBackEnabled="true">
+    <ion-title style="max-width: 980px; margin: auto;">
+      <button ion-button icon-only clear color="light" (click)="goBack()" class="backButton">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+      <div>Activities</div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  {{dateToString}}
+</ion-content>

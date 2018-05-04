@@ -1,0 +1,57 @@
+page-activities {
+
+    .toolbar-title-md{
+        display: flex;
+        align-items: center;
+    }
+
+    .toolbar-title-ios{
+        display: flex;
+        align-items: center;
+    }
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+
+    .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+
+/*========================================*/
+/*=============RESPONSIVE CSS=============*/
+/*========================================*/
+    @media all and (max-width: 768px){
+        .backButton{
+            display: none;
+        }
+    }
+    @media all and (min-width: 768px) and (max-width: 992px){
+        .backButton{
+            display: none;
+        }
+    }
+
+    @media all and (min-width: 992px) and (max-width: 1200px){
+        .back-button.show-back-button {
+            display: none;
+        }
+        
+    }
+
+    @media all and (min-width: 1200px) and (max-width: 1800px){
+        .back-button.show-back-button {
+            display: none;
+        }
+
+    }
+
+    @media all and (min-width: 1800px){
+        .back-button.show-back-button {
+            display: none;
+        }
+
+    }
+}

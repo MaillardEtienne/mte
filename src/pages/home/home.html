@@ -1,0 +1,70 @@
+<ion-content class="ion-content">
+
+  <!--START OF THE SLIDE-->
+  <ion-slides pager class="ion-slides" (ionSlideDidChange)="whichPage()" ionSlideWillChange="hideButton = true;">
+
+    <!--SLIDE 1-->
+    <ion-slide class="ion-slide slideAccueil" style="background-image: url('../../assets/imgs/slide1.jpg');" padding>
+      <div class="darkCardBackground contentText">
+          <h1>Bienvenu sur l'application <strong>My Training Experience</strong></h1>
+          <br>
+          <p>Vous retrouver sur cette application de <strong>nombreuses</strong> fonctions vous permettant d'avoir un 
+            <strong>suivi</strong><br>
+          de vos entrainements avec votre/vos <strong>coach</strong>.</p>
+      </div>
+    </ion-slide>
+  
+    <!--SLIDE 2-->
+    <ion-slide class="ion-slide" style="background-image: url('../../assets/imgs/slide2.jpg');" padding>
+      <div class="darkCardBackground contentText">
+        <h1>Plus de personnalisation</h1>
+        <br>
+        <p>Grâce à notre application, vous pourrez <strong>suivre</strong> vos plans d'entrainement <strong>à la lettre</strong><br>
+        tout en ayant un suivi de <strong>vos séances réalisés</strong> pour effectuer <strong>une analyse</strong>.</p>
+      </div>
+    </ion-slide>
+  
+    <!--SLIDE 3-->
+    <ion-slide class="ion-slide" style="background-image: url('../../assets/imgs/slide3.jpg');">
+      <div class="darkCardBackground contentText">
+          <h1>Ne perdez pas de temps</h1>
+          <br>
+          <p><strong>Ajoutez</strong> vos coach lors de votre <strong>connexion</strong> pour pouvoir profiter de 
+            <strong>toutes</strong> les fonctionnalitées de l'application.</p>
+      </div>
+    </ion-slide>
+
+    <!--SLIDE 4-->
+    <ion-slide class="ion-slide" style="background-image: url('../../assets/imgs/slide4.jpg');">
+      <div class="darkCardBackground contentText">
+      <h1>Connectez vous et essayez notre application dès maintenant</h1>
+      <br>
+      <p><strong>Utilisez</strong></p>
+      <button ion-button icon-right color="light" round large (click)="loginWithFacebook()">
+        Facebook <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+      <p><strong>ou</strong></p>
+      <button ion-button icon-right color="light" round large (click)="loginWithGoogle()">
+        Google <ion-icon name="logo-google"></ion-icon>
+      </button>
+      <p>pour vous connecter <strong>plus facilement</strong>.</p>
+    </div>
+    </ion-slide>
+
+  </ion-slides>
+  <!--END OF THE SLIDE--> 
+
+  <!--BUTTON FOR THE CONNEXION-->
+  <button class="buttonConnexion"     [hidden]="pageSignIn" ion-button color="light" round (click)="goToSignIn($event)">
+    Se connecter
+  </button>
+
+  <!--BUTTON PREVIOUS AND NEXT SLIDE-->
+  <button class="prevNextButton prev" [hidden]="firstPage"  ion-button color="light" icon-only clear (click)="goToPrevious()">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <button class="prevNextButton next" [hidden]="pageSignIn" ion-button color="light" icon-only clear (click)="goToNext()">
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+
+</ion-content>
